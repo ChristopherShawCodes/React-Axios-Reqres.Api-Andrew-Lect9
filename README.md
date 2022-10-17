@@ -1,16 +1,22 @@
 Coding Dojo: React/Mern Stack Lecture: API's and AJAX w/useEffect
 
-This is a basic profile application built during Lecture 8 Date: 9-14-22
+This is an update from lecture 8 and the final product is a result of lectures 8 & 9
 
 Test what I built : https://framed-axios-test-app.netlify.app/
 
 Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 
 // CRUD Operations
-// Create/Read/Update/Delete
+// Create
+   Read
+   Update
+   Delete
 
 // HTTP Verbs
-// Post/Get/Put/Delete
+// Post
+   Get
+   Put
+   Delete
 //Post: Sending data, posting data somewhere else
 //Get: HTTP request to get the data
 //Put: Sending data to update a specific resource
