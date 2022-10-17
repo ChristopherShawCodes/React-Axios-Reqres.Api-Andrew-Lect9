@@ -27,9 +27,10 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 
 
 //-------------------------------------------Fetch Example
-  
-  
-`useEffect(()=>{ 
+
+
+ 
+     useEffect(()=>{                            //Handling the promise that gets created by the request
 
 
     fetch('https://reqres.in/api/users')       //Fetch data / Promise is created
