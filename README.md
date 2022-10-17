@@ -29,15 +29,25 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 //-------------------------------------------Fetch Example
   
 useEffect(()=>{                                //Handling the promise that gets created by the request
+
     fetch('https://reqres.in/api/users')       //Fetch data / Promise is created
+    
     .then((result)=>{                          //If successful
+    
       return result.json()                     //return json format of variable result
+      
     }).then((res)=>{                           //Take json version of the response
+    
       console.log(res)
+      
       setState(res.data)                       //and store it for use.
+      
     }).catch((error)=>{                        //If unsuccessful
+    
       console.log(error)                       //Console Log Error
+      
     })
+    
   } , [])
 
 //-------------------------------------------Axios Example
@@ -45,31 +55,51 @@ useEffect(()=>{                                //Handling the promise that gets 
 //-----------Install Axios---------------------------------------Install Axios
 
 //npm i axios
+
 //----------
+
 //import axios form 'axios'
+
 //----------------------------------------------------------------
 
 useEffect(()=>{
+
     axios.get('https://reqres.in/api/users')
+    
     .then((res)=>{
+    
       console.log(res)
+      
       //Because of axios this specific API
       //  generated another array called data that must be
       //   added in order to access it hence res.data.data
+      
       setState(res.data.data)
+      
     }).catch((error)=>{
+    
       console.log(error)
+      
     })
+    
   } , [])
 
   //-----------------------------------------------ES7 Async/Await
 
   const makeRequest = async () =>{
+  
     try{
+    
       const results = await axios.get('https://reqres.in/api/users')
+      
       setState(results.data.data)
+      
       console.log(results)
+      
     } catch(error){
+    
       console.log(error)
+      
     }
+    
   }
