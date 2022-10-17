@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+Coding Dojo: React/Mern Stack Lecture: API's and AJAX w/useEffect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a basic profile application built during Lecture 8 Date: 9-14-22
 
-## Available Scripts
+Test what I built : https://framed-axios-test-app.netlify.app/
 
-In the project directory, you can run:
+Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 
-### `npm start`
+// CRUD Operations
+// Create/Read/Update/Delete
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+// HTTP Verbs
+// Post/Get/Put/Delete
+//Post: Sending data, posting data somewhere else
+//Get: HTTP request to get the data
+//Put: Sending data to update a specific resource
+//Delete: Request to delete a specific resource
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+//-------------------------------------------Fetch Example
+  
+useEffect(()=>{                                //Handling the promise that gets created by the request
+    fetch('https://reqres.in/api/users')       //Fetch data / Promise is created
+    .then((result)=>{                          //If successful
+      return result.json()                     //return json format of variable result
+    }).then((res)=>{                           //Take json version of the response
+      console.log(res)
+      setState(res.data)                       //and store it for use.
+    }).catch((error)=>{                        //If unsuccessful
+      console.log(error)                       //Console Log Error
+    })
+  } , [])
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+//-------------------------------------------Axios Example
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+//-----------Install Axios---------------------------------------Install Axios
 
-### `npm run eject`
+//npm i axios
+//----------
+//import axios form 'axios'
+//----------------------------------------------------------------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+useEffect(()=>{
+    axios.get('https://reqres.in/api/users')
+    .then((res)=>{
+      console.log(res)
+      //Because of axios this specific API
+      //  generated another array called data that must be
+      //   added in order to access it hence res.data.data
+      setState(res.data.data)
+    }).catch((error)=>{
+      console.log(error)
+    })
+  } , [])
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  //-----------------------------------------------ES7 Async/Await
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  const makeRequest = async () =>{
+    try{
+      const results = await axios.get('https://reqres.in/api/users')
+      setState(results.data.data)
+      console.log(results)
+    } catch(error){
+      console.log(error)
+    }
+  }
