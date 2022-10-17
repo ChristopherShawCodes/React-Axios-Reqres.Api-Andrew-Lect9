@@ -28,7 +28,9 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 
 //-------------------------------------------Fetch Example
   
-useEffect(()=>{                                //Handling the promise that gets created by the request
+  
+`useEffect(()=>{ 
+
 
     fetch('https://reqres.in/api/users')       //Fetch data / Promise is created
     
@@ -48,7 +50,7 @@ useEffect(()=>{                                //Handling the promise that gets 
       
     })
     
-  } , [])
+  } , [])`
 
 //-------------------------------------------Axios Example
 
