@@ -51,7 +51,7 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
       
     })
     
-  } , [])`
+      } , [])
 
 //-------------------------------------------Axios Example
 
@@ -65,7 +65,7 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
 
 //----------------------------------------------------------------
 
-useEffect(()=>{
+      useEffect(()=>{
 
     axios.get('https://reqres.in/api/users')
     
@@ -85,11 +85,11 @@ useEffect(()=>{
       
     })
     
-  } , [])
+      } , [])
 
   //-----------------------------------------------ES7 Async/Await
 
-  const makeRequest = async () =>{
+      const makeRequest = async () =>{
   
     try{
     
@@ -105,4 +105,4 @@ useEffect(()=>{
       
     }
     
-  }
+        }
