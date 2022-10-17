@@ -18,8 +18,11 @@ Lecture 9: Youtube: https://www.youtube.com/watch?v=exXqC-Moj0M
    Put
    Delete
 //Post: Sending data, posting data somewhere else
+
 //Get: HTTP request to get the data
+
 //Put: Sending data to update a specific resource
+
 //Delete: Request to delete a specific resource
 
 
